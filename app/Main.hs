@@ -1,6 +1,7 @@
 module Main where
 
 import Day1
+import Day2
 import System.Environment (getArgs)
 
 main :: IO ()
@@ -11,6 +12,10 @@ main = do
         1 -> case read part :: Int of 
             1 -> doRotates input
             2 -> doRotateSteps input
+            _ -> error "No part 3"
+        2 -> case read part :: Int of
+            1 -> doRepeat input 
+            2 -> doRepeatWindow input
             _ -> error "No part 3"
         _ -> error "Haven't done the problem yet" 
 
