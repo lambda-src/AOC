@@ -1,4 +1,4 @@
-module Day1 (doRotates, doRotateSteps, rotateSteps) where 
+module Day1 where 
 
 -- Part 1 -- 
 -- We have a dial from 0-99.
