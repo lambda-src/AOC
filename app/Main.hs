@@ -3,6 +3,7 @@ module Main where
 import Day1
 import Day2
 import Day3
+import Day4
 import System.Environment (getArgs)
 
 main :: IO ()
@@ -21,5 +22,9 @@ main = do
         3 -> case read part :: Int of 
             1 -> doAllCombos input 
             _ -> error "Havent done it yet"
+        4 -> case read part :: Int of 
+            1 -> doNeighbors input 
+            2 -> doRemoveNeighbors input
+            _ -> error "No part 3"
         _ -> error "Haven't done the problem yet" 
 

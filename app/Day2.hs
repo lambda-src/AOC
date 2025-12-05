@@ -39,7 +39,7 @@ doRepeat input =
 isRepeatWindow :: Int -> Bool 
 isRepeatWindow n = 
     let s       = show n 
-        windows = [1 .. (length s `div` 2)] 
+        windows = [1..(length s `div` 2)] 
     in any (checkWindow s) windows 
 
 -- If its not a multiple then early return false otherwise take each window and * r then check if it equals the original string
@@ -49,7 +49,7 @@ checkWindow s n
     | len `mod` n /= 0 = False 
     | otherwise = 
         let window = take n s
-            r = len `div` n
+            r      = len `div` n
         in concat (replicate r window) == s
     where len = length s 
 
