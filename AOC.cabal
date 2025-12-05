@@ -60,6 +60,7 @@ executable AOC
         Day2
         Day3 
         Day4 
+        Day5
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:

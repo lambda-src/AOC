@@ -4,6 +4,7 @@ import Day1
 import Day2
 import Day3
 import Day4
+import Day5
 import System.Environment (getArgs)
 
 main :: IO ()
@@ -26,5 +27,8 @@ main = do
             1 -> doNeighbors input 
             2 -> doRemoveNeighbors input
             _ -> error "No part 3"
+        5 -> case read part :: Int of 
+            1 -> doRanges input 
+            _ -> error "Haven't finished it yet currently stuck"
         _ -> error "Haven't done the problem yet" 
 

@@ -75,8 +75,8 @@ removeCell :: Grid -> Cell -> Grid
 removeCell g (r, c) = g V.// [(r, (g V.! r) V.// [(c, '.')])]
 
 -- Get the removable spots then fold over them and remove then get the length of the removed spots with the new grid
-removeValidCell :: Grid -> (Grid, Int)
-removeValidCell g =
+removeValidCells :: Grid -> (Grid, Int)
+removeValidCells g =
     let h = V.length g
         w = V.length (g V.! 0)
         removableSpots =
@@ -94,7 +94,7 @@ doRemoveNeighbors :: [String] -> Int
 doRemoveNeighbors input = go (intoGrid input) 0 
     where 
         go g acc = 
-            let (g', removed) = removeValidCell g 
+            let (g', removed) = removeValidCells g 
             in if removed == 0
             then acc 
             else go g' (acc + removed)

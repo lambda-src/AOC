@@ -17,3 +17,9 @@ allCombos s =
 -- Sum up all the largest numbers of every combination
 doAllCombos :: [String] -> Int 
 doAllCombos input = sum $ map (maximum . allCombos) input
+
+-- Part 2 -- 
+-- Given strings of 15 characters made up of numbers we need to find the largest number possible by turning on
+-- 12 of the digits. For instance the largest num possible of "939782123098756" would be "997823098756"  by 
+-- not turning on the 3, 2, and 1. This means that the largest numbers need to be kept to the left side of the string 
+-- where if string[i] < string[i+1] then string[i] needs to not be included for 3 digits
