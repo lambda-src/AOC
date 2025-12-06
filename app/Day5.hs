@@ -7,8 +7,8 @@ type Range = (Int, Int)
 -- Part 1 -- 
 -- For this problem we're given ranges of numbers and id's, we need to count the number of valid id's
 -- and to do that they must be within the ranges, this could be easily done by getting all the ranges then making
--- sure each id is part of a range but with how big the numbers are that could be a lot of comparisons.
--- Instead make a bunch of new ranges to get rid of the overalapping ranges to vastly reduce the 
+-- sure each id is part of a range but with how big the numbers are that could be a lot of comparisons
+--  Instead make a bunch of new rages to get rid of the overalapping ranges to vastly reduce the 
 -- number of comparisons.
 
 
@@ -31,7 +31,7 @@ isFresh r n = any (\(l,h) -> n >= l && n <= h) r
 parseRange :: String -> Range
 parseRange s = case break (== '-') s of
     (a, '-':b) -> (read a, read b)
-    _          -> error $ "Invalid range: " ++ s
+    _          -> error "Unexpected error unreachable"
 
 -- Parse the input into ranges and list of numbers then merge the ranges so there's no overlap then find the length of filter $ isFresh r n 
 doRanges :: [String] -> Int
